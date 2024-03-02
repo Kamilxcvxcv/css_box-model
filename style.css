@@ -1,0 +1,82 @@
+/* .look {
+    outline: 4px solid red;
+    margin: 30px;  padding increases the space between the border of a box and the content of the box
+    padding: 40px;  increases the space between the borders of a box and the borders of adjacent boxes 
+    border: 10px;  add space (even if it's only a pixel or two) between the margin and the padding 
+    display: inline
+} */
+
+/* Order of box model properties is:
+1. Content,
+2. Padding is the space between content and the border of the element it can be set using properties like padding-top right bottom and left, or shorthand padding
+3. Border. it surrounds the padding and the content of the element. It can be styled using properties like border-width, border-style and border color
+4. Margin margin is the space  outside the border of the element, which separates it from other elements. Like padding, it can be set using properties like in padding example */
+
+/* Box sizing CSS property determines how the width and height of an element are calculated.  */
+/* 1. Content-box (default): When box-sizing: content-bo is set the width and height of the element are calculated only based on the conent's
+width and height. Padding and border are added to the specific width and height, increasing the overall size of the element */
+/* 2. Border-box. When box-sizing: border-box is set the width and height of the element include both the content's width and height
+as well as any padding and border. In other words, the padding and border are included in the specified width and height so the do not
+increase the overall size of the element */
+
+/* In general you can set various values for the display type using display property. Can have various values */
+/* Outer display type
+if a box has an outer display type of block then
+- box will break onto a new line
+- the width and height properties are respected
+- padding margin and border will cause other elements to be pushed away from the box
+- if width is not specified, the box will extend in the inline direction to fill the space available in its container. In most cases
+the box will become as wide as its container, filling up 100% of the space
+Elements like h1 and p use block as their outer display type by default
+if box has an outer display type of inline then
+- the box will not break onto a new line
+- the width and height properties will not apply
+- Top and bottom padding, margins and borders will apply but will not cause other inline boxes to move away from the box
+- Left and right margins and border will apply and will casuse other inline boxes to move away from the box*/
+
+
+/* Inner display type -  by default elements inside box are laid in normal flow and behave as block or inline boxes
+You can change it by display: flex, elements will stil use outer display type block but this changes the inner display to flex
+any direct children of this box will become flex item and behave according to the flexbox */
+
+
+/* Maring collapsing
+Depending on wheter two elements whose margins touch have positive or negative marings the results will be different
+- Two positive margins will combine to become one margin. It size will be equal to the largest individual margin
+- Two negative margins will collapse and the smallest (furthest from zero) value will be used 
+- If one margin is negative its value will be subtracted from total*/
+
+/* display: inline-block
+middle ground between inline and block, use if you don't want an item to break onto a new line but do want it to respect width and height
+and avoid overlapping seen above
+- width and height properties are respected
+- padding, margin and border will cause other elements to be pused away from the box
+it don't break onto a new line, and will only become larger than its content if you explicitly add width and height properties */
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+}
+
+.box-one {
+    background-color: red;
+    padding: 10px;
+    border: 20px solid purple;
+    margin: 60px;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+.box-two {
+    background-color: blue;
+    padding: 10px;
+    border: 30px solid purple;
+    margin: 60px;
+}
+
+
+
+
